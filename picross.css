@@ -1,0 +1,365 @@
+/* Victoria King 
+	Picross PHP game CSS
+	This CSS enables the style for the page to display buttons as a grid,
+	and displays tutorial in a special box 
+	Cannibalizing some CSS from a prior final for navbars
+*/
+body {
+	font-family: Arial;
+	background-color: aliceblue;
+	font-size: 14pt;
+}
+
+
+/* Navigation bar container */
+.navbar {
+	overflow: hidden;
+	font-family: Arial;
+	background-image: linear-gradient(to right, rgba(70,130,180,0), rgb(70,130,180, 1), rgb(70,130,180,1), rgba(70,130,180,0));
+	border-top: 1px solid aliceblue;
+	border-bottom: 1px solid aliceblue;
+}
+
+	/* Navigation bar links */
+	.navbar a {
+		float: left;
+		font-size: 16px;
+		color: white; /* Text color for nav links */
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		background-color: steelblue;
+	}
+
+/* Container for dropdown items */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+	/* Turns buttons into menu items - used for initiating the dropdown menus */
+	.dropdown .drop_button {
+		font-size: 24px;
+		border: none;
+		outline: none;
+		color: white;
+		padding: 14px 16px;
+		background-color: inherit;
+		font-family: inherit;
+		margin: 0;
+	}
+
+/* Content for dropdowns (default: hidden) */
+.dropdown_content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 160px;
+	z-index: 1;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+/* Links inside the dropdowns */
+.dropdown_content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	background-color: lightblue; /* This changes the dropdown background color - nothing else does. */
+	border-top: 1px solid black;
+}
+
+/* Changes dropdown background on hover over */
+.dropdown_content a:hover {
+	background-color: aliceblue;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown_content {
+	display: block;
+}
+
+/* Down arrow */
+.arrow {
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	margin-left: 1%;
+	display: inline-block;
+	padding: 3px;
+}
+
+.down {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+.center_nav {
+	margin-left: 45%;
+	margin-right: auto;
+}
+
+/* Block for main button/text content */
+.main_content {
+	border: solid 1px aliceblue;
+	background-color: steelblue;
+	color: white;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 1%;
+	margin-top: 1%;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+.main_content a {
+	color: lightblue;
+	text-decoration: none;
+}
+
+.main_content a:hover {
+	color: darkslateblue;
+	text-decoration: none;
+}
+
+.main_content a:visited {
+	color: lightblue;
+}
+
+/* Non puzzle grid buttons */
+.input_button input[type=submit] {
+	text-align: center;
+	border: none;
+	border-top: 1px solid white;
+	border-bottom: 1px solid white;
+	outline: none;
+	/*background-image: linear-gradient(to right, rgba(72,61,139,0), rgb(72,61,139,1), rgb(72,61,139,1), rgba(72,61,139,0));*/
+	background-image: linear-gradient(to right, rgba(240,248,255,0), rgb(240,248,255,1), rgb(240,248,255,1), rgba(240,248,255,0));
+	background-color: inherit;
+	width: 100%;
+	padding: 25px;
+	font-size: 18pt;
+	color: aliceblue;
+	color: black;
+}
+
+.input_button input[type=submit]:hover {
+	background-color: inherit;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+/* Grid container - moves/handles the grid to avoid it scooting to weird places as a result of
+	the css that eliminates whitespace between buttons. Used to relocate the grid without disturbing the button code too much.
+*/
+.grid_container {
+	text-align: center;
+	/* border: 3px solid blue; debug border - used to show where div is */
+}
+
+.grid {
+	width: 650px;
+	block-size: fit-content;
+	border-top: 1px solid black;
+	padding-top: 1%;
+	padding-bottom: 3%;
+	margin-left: auto;
+	margin-right: auto;
+
+	/* border: 3px solid green; debug border - used to show where div is */
+}
+
+.grid_row {
+	clear: left;
+	margin-left: -12%;
+	margin-top: -2.5%;
+	/* border: 3px solid red; debug border - used to show where div is */
+}
+.grid_row ul li {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	display: inline;
+	float: left;
+}
+
+.grid_row ul li input[type=submit] {
+	margin: 0;
+	padding: 0px;
+	border: 0;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	/*
+	margin-right: -0.33%;*/
+	margin-top: -0.1%;
+	box-sizing: border-box;
+	border: 1px solid grey;
+	font-family: "Arial";
+	font-size: 0pt;
+	display: inline-block;
+}
+
+.grid_button input[type=submit]:hover {
+	background-color: azure;
+}
+
+/*
+.grid_button input:focus {
+	background-color: cornsilk;
+} */
+
+/* x mode toggle button */
+.xmode {
+	margin: 0;
+	padding: 0px;
+	border: 0;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	/*
+	margin-right: -0.33%;*/
+	margin-top: -0.1%;
+	box-sizing: border-box;
+	border: 1px solid grey;
+	background-color: crimson;
+	font-family: "Arial";
+	color: black;
+	font-size: 16pt;
+	display: inline-block;
+}
+
+.xmode input:hover {
+	background-color: azure;
+}
+
+
+/* fill mode button */
+.fillmode {
+	margin: 0;
+	padding: 0px;
+	border: 0;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	/*
+	margin-right: -0.33%;*/
+	margin-top: -0.1%;
+	box-sizing: border-box;
+	border: 1px solid grey;
+	background-color: black;
+	font-family: "Arial";
+	color: white;
+	font-size: 16pt;
+	display: inline-block;
+}
+
+	.fillmode input:hover {
+		background-color: azure;
+	}
+
+
+/* clear mode button */
+.clearmode {
+	margin: 0;
+	padding: 0px;
+	border: 0;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	/*
+	margin-right: -0.33%;*/
+	margin-top: -0.1%;
+	box-sizing: border-box;
+	border: 1px solid grey;
+	background-color: cornsilk;
+	font-family: "Arial";
+	color: black;
+	font-size: 14pt;
+	display: inline-block;
+}
+
+	.clearmode input:hover {
+		background-color: azure;
+	}
+
+/* Solution key div/span stuff*/
+
+.top_key_text {
+	/*border: 1px solid black;*/
+	width: 46px;
+	margin-right: 0.18%;
+	display: inline-block;
+	margin-right: -0.4%;
+	margin-top: -0.1%;
+	margin-bottom: -5%;
+}
+
+.top_key_10 {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	/*border: 1px solid black;*/
+	margin-bottom: 5px;
+}
+
+.side_key_10 {
+	/*border: 1px solid black;*/
+	margin: 0;
+	width: 100px;
+	height: 50px;
+	padding-right: 10px;
+	margin-right: 0.45%;
+	float: left;
+	text-align: right;
+	line-height: 65px;
+	margin-top: -1%;
+}
+
+.video {
+	/* for adding a style fo a video embed */
+	display: inline-block;
+	border: 1px solid black;
+	margin-bottom: 1%;
+}
+
+.video_container {
+
+	text-align: center;
+	margin-top: 1%;
+	color: black;
+}
+
+.directions {
+	text-align: justify;
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-bottom: 1%;
+}
+
+/* 
+	Using php to change css blocks on grid buttons.
+	array has state of each grid button to hold the class it is using to display 'blank', 'X' or 'Filled'.
+	Unfortunately I can't change the button name to display an X so a workaround is to use colors.
+*/
+.x {
+	background-color: crimson;
+}
+
+.fill {
+	background-color: black;
+}
+
+.clear {
+	background-color: cornsilk;
+}
+
+.endclear {
+	background-color: aliceblue;
+}
